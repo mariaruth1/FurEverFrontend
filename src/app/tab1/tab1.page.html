@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Find Furry Friends...
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card class="furryCard"  *ngFor="let f of furries">
+    <ion-row>
+      <ion-col class="profilePictureCol">
+        <img class="profilePicture" routerLink="../profile/{{f.furryId}}" src="../../assets/images/panda.jpg" alt="profile picture">
+      </ion-col>
+      <ion-col>
+        <ion-card-title>{{f.username}}</ion-card-title>
+        <ion-card-subtitle>Fursona: {{f.fursona}}</ion-card-subtitle>
+        <ion-card-subtitle>Age: {{f.age}}</ion-card-subtitle>
+      </ion-col>
+      <ion-col>
+        <ion-card-content>I am a little furry in a furry furry world!</ion-card-content>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+
+  <app-explore-container name="Tab 1 page">
+
+  </app-explore-container>
+</ion-content>
